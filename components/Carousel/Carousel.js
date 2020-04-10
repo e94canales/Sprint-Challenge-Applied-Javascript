@@ -32,6 +32,7 @@ function createCarousel (images) {
 
   const img1 = document.createElement('img')
     img1.src = '../assets/carousel/mountains.jpeg'
+    img1.classList.add('slide', 'showing')
     carousel.appendChild(img1)
 
   const img2 = document.createElement('img')
@@ -57,9 +58,36 @@ function createCarousel (images) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const slidesNL = document.querySelectorAll('.carousel img')
+  const slides = Array.from(slidesNL)
+
+  let slideIndex = 0;
+
+  const next = document.querySelector('.right-button')
+  const previous = document.querySelector('.left-button')
+
+  function nextSlide() {
+    slides[slideIndex].className = 'slide'
+    slideIndex = (slideIndex + 1) % slides.length
+    console.log((slideIndex))
+    slides[slideIndex].className = 'slide showing'
+}
+
+  function previousSlide() {
+    slides[slideIndex].className = 'slide'
+    slideIndex = (slideIndex - 1) % slides.length
+    if (slideIndex == -1) { 
+      slideIndex = slides.length-1; 
+    } 
+    console.log((slideIndex))
+    slides[slideIndex].className = 'slide showing'
+  }
 
 
-  console.log(slidesNL);
-
+  next.addEventListener('click', () => {
+    nextSlide();
+  });
+  previous.addEventListener('click', () => {
+    previousSlide()
+  })
 
 })
