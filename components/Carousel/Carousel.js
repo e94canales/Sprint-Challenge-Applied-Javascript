@@ -31,22 +31,22 @@ function createCarousel (images) {
     carousel.appendChild(leftBtn)
 
   const img1 = document.createElement('img')
-    img1.src = '../assets/carousel/mountains.jpeg'
+    img1.src = './assets/carousel/mountains.jpeg'
     img1.classList.add('slide', 'showing')
     carousel.appendChild(img1)
 
   const img2 = document.createElement('img')
-    img2.src = '../assets/carousel/computer.jpeg'
+    img2.src = './assets/carousel/computer.jpeg'
     img2.classList.add('slide')
     carousel.appendChild(img2)
 
   const img3 = document.createElement('img')
-    img3.src = '../assets/carousel/trees.jpeg'
+    img3.src = './assets/carousel/trees.jpeg'
     img3.classList.add('slide')
     carousel.appendChild(img3)
 
   const img4 = document.createElement('img')
-    img4.src = '../assets/carousel/turntable.jpeg'
+    img4.src = './assets/carousel/turntable.jpeg'
     img4.classList.add('slide')
     carousel.appendChild(img4)
 
