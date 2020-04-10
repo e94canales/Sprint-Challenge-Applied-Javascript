@@ -37,14 +37,17 @@ function createCarousel (images) {
 
   const img2 = document.createElement('img')
     img2.src = '../assets/carousel/computer.jpeg'
+    img2.classList.add('slide')
     carousel.appendChild(img2)
 
   const img3 = document.createElement('img')
     img3.src = '../assets/carousel/trees.jpeg'
+    img3.classList.add('slide')
     carousel.appendChild(img3)
 
   const img4 = document.createElement('img')
     img4.src = '../assets/carousel/turntable.jpeg'
+    img4.classList.add('slide')
     carousel.appendChild(img4)
 
   const rightBtn = document.createElement('div')
@@ -81,13 +84,21 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log((slideIndex))
     slides[slideIndex].className = 'slide showing'
   }
-
+  function animationL (){  
+    gsap.from('.showing', {duration: .7, ease: "back.out(2)", x: 350})
+  }
+  function animationR (){  
+    gsap.from('.showing', {duration: .7, ease: "back.out(2)", x: -350})
+  }
 
   next.addEventListener('click', () => {
-    nextSlide();
+    nextSlide()
+    animationL()
   });
   previous.addEventListener('click', () => {
     previousSlide()
+    animationR()
   })
+  
 
 })
