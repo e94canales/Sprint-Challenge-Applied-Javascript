@@ -23,7 +23,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
     function createTab (data) {
         const tab = document.createElement('div')
-            tab.classList.add('tab')
+            tab.classList.add('tab', `${data}`)
             tab.textContent = data
 
         return tab

@@ -101,4 +101,78 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   
 
+  setTimeout(function(){
+
+    const card = document.querySelectorAll('div .card')    
+    const filterKeys = ['js', 'js', 'js', 'js', 'bs', 'bs', 'bs', 'tech', 'tech', 'tech', 'jq', 'jq', 'jq', 'node', 'node']
+    const javascript = document.querySelector('.javascript')
+    const bootstrap = document.querySelector('.bootstrap')
+    const tech = document.querySelector('.technology')
+    const jquery = document.querySelector('.jquery')
+    const node = document.querySelectorAll('.tab')[4]
+    for (let i = 0; i < filterKeys.length; i++){
+      card[i].classList.add(filterKeys[i])
+    }
+
+    const jsCards = document.querySelectorAll('.js')
+    const bsCards = document.querySelectorAll('.bs')
+    const techCards = document.querySelectorAll('.tech')
+    const jqCards = document.querySelectorAll('.jq')
+    const nodeCards = document.querySelectorAll('.node')
+
+    javascript.addEventListener('click', e => {
+      for (let i = 0; i < card.length; i++){
+        card[i].classList.remove('show')
+      }
+      jsCards.forEach( e => {
+        e.classList.toggle('show')
+      })
+      gsap.from('.js', {opacity: 0, duration: 1, x: 100})
+    })
+    bootstrap.addEventListener('click', e => {
+      for (let i = 0; i < card.length; i++){
+        card[i].classList.remove('show')
+      }
+      bsCards.forEach( e => {
+        e.classList.add('show')
+      })
+      gsap.from('.bs', {opacity: 0, duration: 1, x: 100})
+
+    })
+    tech.addEventListener('click', e => {
+      for (let i = 0; i < card.length; i++){
+        card[i].classList.remove('show')
+      }
+      techCards.forEach( e => {
+        e.classList.add('show')
+      })
+      gsap.from('.tech', {opacity: 0, duration: 1, x: 100})
+
+    })
+    jquery.addEventListener('click', e => {
+      for (let i = 0; i < card.length; i++){
+        card[i].classList.remove('show')
+      }
+      jqCards.forEach( e => {
+        e.classList.add('show')
+      })
+      gsap.from('.jq', {opacity: 0, duration: 1, x: 100})
+
+    })
+    node.addEventListener('click', e => {
+      for (let i = 0; i < card.length; i++){
+        card[i].classList.remove('show')
+      }
+      nodeCards.forEach( e => {
+        e.classList.add('show')
+      })
+      gsap.from('.card', {opacity: 0, duration: 1, x: 100})
+
+    })
+
+
+
+  }, 3000); 
+  
+
 })
